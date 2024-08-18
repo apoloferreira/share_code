@@ -1,0 +1,50 @@
+
+# reference:
+#   database: workspace_db
+#   table: tb_spec_dataset
+#   train_data:
+#     start: 202001
+#     end: 202212
+
+# metrics:
+#   table: ["volumetry"]
+#   keys:
+#     names: ["id"]
+#     together: ["duplicity"]
+#     individual:
+#       id: ["missing"]
+#   features:
+#     numerigcal:
+#       sepal_length: ["mean", "missing"]
+#       sepal_width: ["mean"]
+#       petal_length: ["mean"]
+#     categorical:
+#       tipo: ["missing"]
+#       suit: ["missing"]
+#   target:
+#     target: ["missing"]
+
+reference:
+  database: workspace_db
+  table: tb_spec_dataset
+  train_data:
+    start: 202001
+    end: 202212
+
+metrics:
+  table: ["volumetry"]
+  keys:
+    names: ["id"]
+    _keys: ["duplicity"]
+    individual:
+      id: ["missing"]
+  features:
+    numerical:
+      sepal_length: ["mean", "missing"]
+      sepal_width: ["mean"]
+      petal_length: ["mean"]
+    categorical:
+      tipo: ["missing"]
+      suit: ["missing"]
+  target:
+    target: ["missing"]
