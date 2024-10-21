@@ -1,6 +1,0 @@
-# sagemaker-training
-polars
-duckdb
-scikit-learn
-sagemaker
-pandas
