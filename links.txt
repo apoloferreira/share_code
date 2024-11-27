@@ -1,0 +1,25 @@
+
+# Links:
+
+https://www.geeksforgeeks.org/ieee-standard-754-floating-point-numbers/
+https://www.h-schmidt.net/FloatConverter/IEEE754.html
+https://www.wikihow.com/Convert-a-Number-from-Decimal-to-IEEE-754-Floating-Point-Representation
+
+https://pbpython.com/pandas_dtypes.html
+https://numpy.org/doc/2.1/user/basics.types.html
+https://numpy.org/doc/1.22/user/basics.types.html
+
+https://docs.python.org/3.9/tutorial/floatingpoint.html
+
+https://kaustubh13.medium.com/why-0-1-0-1-0-1-is-not-0-3-and-rocket-explosion-e9ad77014b5
+https://www.youtube.com/watch?v=5tJPXYA0Nec&ab_channel=TopQuark
+
+
+===========================================================================================
+## Links Auxiliares:
+
+Ariane 5
+https://numpy.org/doc/stable/reference/generated/numpy.set_printoptions.html
+
+
+

@@ -1,0 +1,111 @@
+
+Organize melhor as ideias escritas abaixo.
+Preciso enviar parao pessoal do trabalho explicando para desenvolvedores do time tecnico e coordenadores um problema que tivemos com ponto flutuante na criacao de um modelo de machine learning com python. Acontece que nao estamos conseguindo replicar o modelo.
+
+Quero escrever uma breve explicacao de ponto flutuante, depois do padrao IEEE-754 e por fim das minhas consideracoes do que aconteceu.
+
+Segue algumas informacoes e esbocos que escrevi:
+
+
+# Ponto flutuante
+
+Before we understand what is happening here, let’s just take a moment to acknowledge how the computer interprets/stores (what we call) the decimal numbers.
+
+In our world, we use base 10 notation; every place in a number is 10 to the power of something,
+
+But when it comes to computers, they interpret numbers as base 2 notation, every place is a power of 2.
+
+Ex. in decimal representation: 13 = (1 x 10¹) + (3 x 10⁰)
+But in binary notation: 13 = (1 x 2³) + (1 x 2²) + (0 x 2¹) + (1 x 2⁰)
+
+So, when you try and represent 1/10 in here, we get that perfectly 0.1 in the base 10 system, but what about base 2? It doesn’t have any 1/10, so what we get is 0.0001100110011…. repeating indefinitely.
+
+
+
+O que e IEEE Standard 754 Floating Point Numbers?
+
+The IEEE Standard for Floating-Point Arithmetic (IEEE 754) is a technical standard for floating-point computation which was established in 1985 by the Institute of Electrical and Electronics Engineers (IEEE). The standard addressed many problems found in the diverse floating point implementations that made them difficult to use reliably and reduced their portability. IEEE Standard 754 floating point is the most common representation today for real numbers on computers, including Intel-based PC’s, Macs, and most Unix platforms.
+
+There are several ways to represent floating point number but IEEE 754 is the most efficient in most cases. IEEE 754 has 3 basic components:
+
+The Sign of Mantissa –
+    This is as simple as the name. 0 represents a positive number while 1 represents a negative number.
+The Biased exponent –
+    The exponent field needs to represent both positive and negative exponents. A bias is added to the actual exponent in order to get the stored exponent.
+The Normalised Mantissa –
+    The mantissa is part of a number in scientific notation or a floating-point number, consisting of its significant digits. Here we have only 2 digits, i.e. O and 1. So a normalised mantissa is one with only one 1 to the left of the decimal.
+
+
+Overflow generally means that values have grown too large to be represented.
+Underflow is a less serious problem because is just denotes a loss of precision, which is guaranteed to be closely approximated by zero.
+
+
+-> Representacao de um numero decimal em binario de 32 bits de acordo com a IEEE-754
+1 = 0 01111111 00000000000000000000000
+
+-> Representacao de um numero decimal em binario de 64 bits de acordo com a IEEE-754
+1 = 0 01111111 00000000000000000000000000000000000000000000000000000
+    
+-> Representacao de um numero decimal em binario de 64 bits de acordo com a IEEE-754
+1029 = 10000000101
+0 10000000101 0101010010000000000000000000000000000000000000000000
+
+# Python
+
+Floating-point numbers are represented in computer hardware as base 2 (binary) fractions
+Unfortunately, most decimal fractions cannot be represented exactly as binary fractions. A consequence is that, in general, the decimal floating-point numbers you enter are only approximated by the binary floating-point numbers actually stored in the machine.
+
+Um exemplo disso sao as dizimas periodicas, por exemplo 1/3. Nao importa quantos digitos vode escreva, o resultado nunca sera exatamente 1/3 mas sera uma aproximacao cada vez melhor.
+
+Da mesma forma, não importa quantos dígitos de base 2 você esteja disposto a usar, o valor decimal 0,1 não pode ser representado exatamente como uma fração de base 2. Na base 2, 1/10 é a fração infinitamente repetida: 0.0001100110011001100110011001100110011001100110011...
+
+if Python were to print the true decimal value of the binary approximation stored for 0.1, it would have to display:
+>>> 0.1
+0.1000000000000000055511151231257827021181583404541015625
+
+# Pandas
+
+Um possível ponto de confusão sobre os tipos de dados do pandas é que há alguma sobreposição entre pandas, python e numpy. Esta tabela resume os pontos-chave:
+
+For the most part, there is no need to worry about determining if you should try to explicitly force the pandas type to a corresponding to NumPy type. Most of the time, using pandas default int64 and float64 types will work.
+
+# Causa do Problema
+
+O problema enfrentado na validacao e de ponto flutuante nos digitos numericos de tipo float64.
+Pelo fato da representacao desses numeros serem de alta precisao estava acontecendo de os ultimos digitos nao estarem sendo replicaveis, ocorrendo flutuacoes desses numeros para execucoes em ambientes diferentes. 
+
+Acredito que no casso do Modelo de Behaviour agro industria esta acontecendo disparidade na conversao dos dados entre alguma biblioteca.
+Do notebook de EDA ate no modelo estamos passando por diversos frameworks e bibliotecas em diferentes versoes, tendo algumas escritos em C, C++, python e Java.
+
+1. arquivo parquet
+2. athena
+3. awswrangler
+4. pandas
+5. category_encoders
+6. Optbinning
+7. scikit-learn
+8. Numpy
+9. Cidarta
+10. lightgbm
+
+Apesar de tipo iguais representarem o mesmo tipo numérico em termos conceituais, eles podem ter diferenças em sua implementação interna.
+
+
+# solucao
+
+Vimos que quando os digitos estavam como float64 as ultimas casas variavam e nao batiam na validacao, entretanto diminuindo a precisa para float32 essas diferencas nao existem mais. Essa foi a trativa.
+
+Quando convertemos um digito de flaot64 para flot32 reprocessamos a 'mantissa' para converter os 52 bits de precisao para 23, arredondando para o mais proximo seguindo o padrao da IEEE-754.
+
+
+Vai existir situacoes onde aumentar a precisao vai ser a solucao ja em outras diminuir a precisao.
+
+Em um ambiente controlaveis onde usamos a mesma linguaguem de programacao a mesma ferramenta e software fica mais facil controlar os pontos de conversao de tipos de dados e nesses casos usar uma precisao maior e melhor. Pois mais precisao maior as possibilidades para representar os numeros.
+
+Em cenarios onde os dados passam por diversos frameworks, diferentes linguaguem, diferentes bibliotecas com diferentes implementacoes do padrao IEEE-754 fica mais divicil garantir a replicabilidade dos digitos de ponto flutuante e nesse caso arrendondar para flot32 e uma alternativa.
+
+O ponto e que quanto mais digitos decimais maior a probabilidade de acontencer diferencas nesses digitos. Garantir a igualdade de 52 bits e mais dificil que de 32 bits.
+
+
+
+
