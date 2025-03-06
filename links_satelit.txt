@@ -1,0 +1,16 @@
+
+# Copernicus 
+
+https://dataspace.copernicus.eu/explore-data/data-collections/sentinel-data/sentinel-3
+https://documentation.dataspace.copernicus.eu/Data/SentinelMissions/Sentinel3.html
+https://dataspace.copernicus.eu/cases/developing-and-visualizing-high-temporal-resolution-imagery-evolution-copernicus-land-0
+https://dataspace.copernicus.eu/news/2023-9-28-accessing-sentinel-mission-data-new-copernicus-data-space-ecosystem-apis
+
+=======================================================================================================================
+
+# GitHub
+
+https://github.com/willrayeo/notebook-samples/tree/main
+
+
+
