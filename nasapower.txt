@@ -1,0 +1,132 @@
+
+Temperature at 2 Meters
+All Sky Surface Shortwave Downward Irradiance
+Relative Humidity at 2 Meters
+Wind Speed at 2 Meters
+Dew/Frost Point at 2 Meters
+Temperature at 2 Meters Maximum
+Temperature at 2 Meters Minimum
+Surface Pressure
+Wet Bulb Temperature at 2 Meters
+Wind Speed at 50 Meters
+All Sky Surface Longwave Downward Irradiance
+Wind Direction at 50 Meters
+Wind Direction at 2 Meters
+All Sky Surface Shortwave Diffuse Irradiance
+All Sky Surface Shortwave Downward Direct Normal Irradiance
+All Sky Surface Albedo
+Cloud Amount
+Precipitation Corrected
+Top-Of-Atmosphere Shortwave Downward Irradiance
+Wind Speed at 10 Meters
+Profile Soil Moisture
+Earth Skin Temperature
+Wind Direction at 10 Meters
+All Sky Surface Total PAR
+Specific Humidity at 2 Meters
+Temperature at 2 Meters Range
+All Sky Insolation Clearness Index
+Clear Sky Surface Shortwave Downward Irradiance
+Root Zone Soil Wetness
+Surface Soil Wetness
+Wind Speed at 10 Meters Maximum
+Wind Speed at 10 Meters Minimum
+Wind Speed at 10 Meters Range
+Wind Speed at 50 Meters Maximum
+Wind Speed at 50 Meters Minimum
+Wind Speed at 50 Meters Range
+All Sky Surface UVA Irradiance
+All Sky Surface UVB Irradiance
+All Sky Surface UV Index
+Cooling Degree Days Above 0 C
+Cooling Degree Days Above 18.3 C
+Clear Sky Insolation Clearness Index
+Clear Sky Surface Total PAR
+Frost Days
+Heating Degree Days Below 0 C
+Heating Degree Days Below 18.3 C
+Midday Insolation Incident
+Snow Depth
+Solar Zenith Angle
+Top-Of-Atmosphere Shortwave Direct Normal Radiation
+Earth Skin Temperature Maximum
+Earth Skin Temperature Minimum
+Wind Speed at 2 Meters Maximum
+Wind Speed at 2 Meters Minimum
+Wind Speed at 2 Meters Range
+Aerosol Optical Depth 55
+Corrected Atmospheric Pressure (Adjusted For Site Elevation)
+Precipitable Water
+Corrected Wind Speed (Adjusted For Elevation)
+Eastward Wind at 10 Meters
+Northward Wind at 10 Meters
+Air Mass
+All Sky Normalized Insolation Clearness Index
+All Sky Surface Longwave Upward Irradiance
+All Sky Surface Diffuse PAR
+All Sky Surface Direct Horizontal PAR
+All Sky Surface Shortwave Direct Horizontal Irradiance
+All Sky Surface Shortwave Upward Irradiance
+Adjusted Aerosol Optical Depth 55
+Aerosol Optical Depth 84
+Cloud Optical Visible Depth
+Clear Sky Days
+Clear Sky Normalized Insolation Clearness Index
+Clear Sky Surface Longwave Downward Irradiance
+Clear Sky Surface Longwave Upward Irradiance
+Clear Sky Surface Diffuse PAR
+Clear Sky Surface Direct Horizontal PAR
+Clear Sky Surface Shortwave Downward Diffuse Irradiance
+Clear Sky Surface Shortwave Direct Horizontal Irradiance
+Clear Sky Surface Shortwave Downward Direct Normal Irradiance
+Clear Sky Surface Shortwave Upward Irradiance
+Clear Sky Surface Albedo
+Zero Plane Displacement Height
+Evaporation Land
+vapotranspiration Energy Flux
+Ice Covered Fraction
+Land Snowcover Fraction
+Probability of Liquid Precipitation
+Total Precipitation
+Count of Precipitation Retrievals
+All Sky Surface Longwave Downward Irradiance
+All Sky Surface Shortwave Diffuse Irradiance
+All Sky Surface Shortwave Direct Horizontal Irradiance
+All Sky Surface Shortwave Downward Irradiance
+Clear Sky Surface Longwave Downward Irradiance
+Clear Sky Surface Shortwave Downward Irradiance
+Planetary Boundary Layer Top Pressure
+Snow Precipitation
+
+Snow Precipitation Land
+Peak Sun Hour
+Specific Humidity at 10 Meters
+Surface Air Density
+Sea Level Pressure
+Surface Albedo Adjusted
+Temperature at 10 Meters
+Temperature at 10 Meters Maximum
+Temperature at 10 Meters Minimum
+Temperature at 10 Meters Range
+
+Total Column Ozone
+Total Column Precipitable Water
+Tropopause Pressure based on blended estimate.
+Tropopause Specific Humidity using blended TROPP estimate.
+Tropopause Temperature using blended TROPP estimate.
+Soil Temperatures Layer 1
+Soil Temperatures Layer 2
+Soil Temperatures Layer 3
+
+Soil Temperatures Layer 4
+Soil Temperatures Layer 5
+Soil Temperatures Layer 6
+Surface Temperature of Land and Snow
+Earth Skin Temperature Adjusted
+Earth Skin Temperature Range
+Eastward Wind at 2 Meters
+Eastward Wind at 50 Meters
+Northward Wind at 2 Meters
+Northward Wind at 50 Meters
+
+Surface Roughness
